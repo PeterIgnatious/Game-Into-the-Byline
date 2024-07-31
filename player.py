@@ -6,6 +6,7 @@ import random
 mixer.init()
 step = mixer.Sound("assets/sounds/steps.mp3")
 
+
 class Player:
     def __init__(self, x, y, win, width, height, color, left, right, up, down, width_maze, num_pixels):
         self.pos_x = x
@@ -19,6 +20,7 @@ class Player:
         self.up = up
         self.down = down
         self.speed = width_maze / num_pixels
+        self.player_position = (self.pos_y + 1, self.pos_x + 1)
 
     def spawn(self, num_pixels):
 
@@ -34,9 +36,9 @@ class Player:
         pos_y = self.pos_y * self.speed + y_maze + (self.speed - self.height) / 2
 
         pygame.draw.rect(self.window, self.color, (pos_x, pos_y, self.width, self.height))
-        pygame.display.update((self.pos_x * self.speed + x_maze, self.pos_y * self.speed + y_maze, self.speed, self.speed))
+        # pygame.display.update((self.pos_x * self.speed + x_maze, self.pos_y * self.speed + y_maze, self.speed, self.speed))
 
-        #return self.pos_x + 1, self.pos_y + 1
+        return self.pos_x + 1, self.pos_y + 1
 
     def control(self, event, maze_map):
 
@@ -58,5 +60,7 @@ class Player:
             elif event.key == self.down and possible_directions["S"]:
                 step.play()
                 self.pos_y += 1
+
+        self.player_position = (self.pos_y + 1, self.pos_x + 1)
 
         return self.pos_x, self.pos_y

@@ -29,18 +29,15 @@
   <ItemGroup>
     <Folder Include="assets\" />
     <Folder Include="assets\music\" />
-    <Folder Include="assets\backgrounds\" />
-    <Folder Include="assets\icon\" />
     <Folder Include="assets\sounds\" />
     <Folder Include="data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\backgrounds\background.png" />
     <Content Include="assets\sounds\Attack.mp3" />
     <Content Include="assets\End - 1080p.mp4" />
     <Content Include="assets\End - 720p.mp4" />
-    <Content Include="assets\backgrounds\home_screen.png" />
-    <Content Include="assets\icon\icon.png" />
+    <Content Include="assets\home_screen.png" />
+    <Content Include="assets\icon.png" />
     <Content Include="assets\Intro - 1080p.mp4" />
     <Content Include="assets\Intro - 720p.mp4" />
     <Content Include="assets\music\main_sound.mp3" />
